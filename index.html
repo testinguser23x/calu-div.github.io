@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Divisas - maykolg</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Calculadora de Divisas</h1>
+            <p class="subtitle">Conversor de monedas en tiempo real</p>
+        </header>
+
+        <main class="main-content">
+            <div class="calculator-card">
+                <div class="input-group">
+                    <label for="from-amount">Cantidad</label>
+                    <input type="number" id="from-amount" placeholder="0.00" step="0.01" min="0">
+                </div>
+
+                <div class="currency-row">
+                    <div class="currency-select">
+                        <label for="from-currency">De</label>
+                        <select id="from-currency">
+                            <option value="USD">USD - Dólar Estadounidense</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - Libra Esterlina</option>
+                            <option value="JPY">JPY - Yen Japonés</option>
+                            <option value="CHF">CHF - Franco Suizo</option>
+                            <option value="CAD">CAD - Dólar Canadiense</option>
+                            <option value="AUD">AUD - Dólar Australiano</option>
+                            <option value="CNY">CNY - Yuan Chino</option>
+                            <option value="MXN">MXN - Peso Mexicano</option>
+                            <option value="ARS">ARS - Peso Argentino</option>
+                            <option value="BRL">BRL - Real Brasileño</option>
+                            <option value="CLP">CLP - Peso Chileno</option>
+                            <option value="COP">COP - Peso Colombiano</option>
+                            <option value="PEN">PEN - Sol Peruano</option>
+                            <option value="UYU">UYU - Peso Uruguayo</option>
+                        </select>
+                    </div>
+
+                    <button class="swap-btn" id="swap-currencies" title="Intercambiar monedas">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"/>
+                        </svg>
+                    </button>
+
+                    <div class="currency-select">
+                        <label for="to-currency">A</label>
+                        <select id="to-currency">
+                            <option value="USD">USD - Dólar Estadounidense</option>
+                            <option value="EUR" selected>EUR - Euro</option>
+                            <option value="GBP">GBP - Libra Esterlina</option>
+                            <option value="JPY">JPY - Yen Japonés</option>
+                            <option value="CHF">CHF - Franco Suizo</option>
+                            <option value="CAD">CAD - Dólar Canadiense</option>
+                            <option value="AUD">AUD - Dólar Australiano</option>
+                            <option value="CNY">CNY - Yuan Chino</option>
+                            <option value="MXN">MXN - Peso Mexicano</option>
+                            <option value="ARS">ARS - Peso Argentino</option>
+                            <option value="BRL">BRL - Real Brasileño</option>
+                            <option value="CLP">CLP - Peso Chileno</option>
+                            <option value="COP">COP - Peso Colombiano</option>
+                            <option value="PEN">PEN - Sol Peruano</option>
+                            <option value="UYU">UYU - Peso Uruguayo</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="result-section">
+                    <div class="result-amount" id="result-amount">0.00</div>
+                    <div class="exchange-rate" id="exchange-rate">1 USD = 0.85 EUR</div>
+                </div>
+
+                <button class="convert-btn" id="convert-btn">Convertir</button>
+            </div>
+
+            <div class="info-card">
+                <h3>Información de Tasas</h3>
+                <div class="rate-info">
+                    <p><strong>Última actualización:</strong> <span id="last-update">Cargando...</span></p>
+                    <p><strong>Fuente:</strong> Tipos de cambio de mercado</p>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h3>Historial de Conversiones</h3>
+                <div class="history-list" id="history-list">
+                    <p class="no-history">No hay conversiones recientes</p>
+                </div>
+                <button class="clear-history-btn" id="clear-history">Limpiar historial</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 maykolg. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Convirtiendo...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
